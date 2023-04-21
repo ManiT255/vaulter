@@ -1,12 +1,2 @@
 # vaulter
-This python script is a brute forcer having to wait for a response before moving on.  Having to import string, subprocess, time, and itertools to assist. 
-String module was used to use the constant of 'ascii_lowercase'.  Could have provided each lowercase letter, but this was a cleaner apprach.  
-The subprocess module was used for executing the 'vault.o' application and the password line argument that the file needed.  
-Importing time lets us pause the exectuion of the probgram in case the application crashes from too many attempts too fast.  Thus the need for a timed attack.  
-This does lengthen the pocess by quite a bit however.  I also had to add itertools.  Importing string alone wouldn't work and itertools itself.  So needed both string and itertools.
-
-You will need to open terminal and cd to where the vault.o file is and have the v14.py in the same directory.
-
-$python3 v14.py
-
-This will begin starting at the first letter and trying each one until you get a "Success" and the script will wait until you respond.
+The timing attack is a variation from mCoding with a provided file named vault.o.  This will only work if the application can be brute forced and doesn't lock down.  Change your filename to what it is being tested and may need to be updated to provide a password guess.  The timing attack looks to see how the file responds to a password and specific password lengths.  The longer it takes at a certain length the better and gives you and idea on the length of the password.  Depending on the length you may want to add a password list with the known length or just let the crack_password attempt at random.  This code accepts the best timing and then brute forces the attack.
